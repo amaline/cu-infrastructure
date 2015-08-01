@@ -15,3 +15,4 @@ deployment:
   hub:
    branch: master
    commands:
+      - /opt/terraform/terraform apply
