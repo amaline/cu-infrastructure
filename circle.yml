@@ -9,10 +9,10 @@ dependencies:
 
 test:
    override:
-      - ./opt/terraform/terraform plan
+      - ./opt/terraform plan
 
 deployment:
   hub:
    branch: master
    commands:
-      - ./opt/terraform/terraform apply
+      - ./opt/terraform apply
