@@ -3,7 +3,7 @@ machine:
 dependencies:
    override:
       - pwd
-      - mkdir -p ./opt/terraform
+      - mkdir ./opt
       - wget -O ./opt/terraform.zip https://dl.bintray.com/mitchellh/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
       - cd ./opt && ls -l && unzip -o terraform.zip && rm -f terraform.zip && find . -print
 
