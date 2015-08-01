@@ -2,17 +2,18 @@ machine:
 
 dependencies:
    override:
-      - mkdir /opt/terraform
-      - wget -O /opt/terraform.zip https://dl.bintray.com/mitchellh/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
-      - unzip /opt/terraform.zip /opt/terraform
-      - rm -f /opt/terraform.zip
+      - pwd
+      - mkdir -p ./opt/terraform
+      - wget -O ./opt/terraform.zip https://dl.bintray.com/mitchellh/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+      - unzip ./opt/terraform.zip ./opt/terraform
+      - rm -f ./opt/terraform.zip
 
 test:
    override:
-      - /opt/terraform/terraform plan
+      - ./opt/terraform/terraform plan
 
 deployment:
   hub:
    branch: master
    commands:
-      - /opt/terraform/terraform apply
+      - ./opt/terraform/terraform apply
