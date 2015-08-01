@@ -5,8 +5,7 @@ dependencies:
       - pwd
       - mkdir -p ./opt/terraform
       - wget -O ./opt/terraform.zip https://dl.bintray.com/mitchellh/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
-      - unzip ./opt/terraform.zip ./opt/terraform
-      - rm -f ./opt/terraform.zip
+      - cd ./opt && ls -l && unzip terraform.zip && rm -f terraform.zip
 
 test:
    override:
